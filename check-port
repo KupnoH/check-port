@@ -1,0 +1,23 @@
+#!/bin/bash
+read -p 'Which port should I check? ' port
+echo Checking port $port...
+
+processId=`lsof -i tcp:$port | grep LISTEN | tr -s ' ' | cut -d ' ' -f 2`
+
+if [ ! -z "$processId" ];
+then
+    echo PID is $processId
+    read -p "Do you want to kill this process? (yes/no) " yn
+    case $yn in
+        [yY] ) echo ok, killing process $processId
+            kill -9 $processId
+            echo process killed, have a good day
+            exit;;
+
+        [nN] ) echo exiting, have a good day
+            exit 1;;
+        * ) echo invalid response;;
+    esac
+else
+    echo nothing on port $port
+fi
