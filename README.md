@@ -19,6 +19,3 @@ Illustrations are bit out of date, but you've got the concept.
 I did it, because I was tired to run `lsof -i tcp:_port_number_ | grep LISTEN`, and then copying process id and then running `kill -9 _process_id_`. So I made this script with some checks and askings that may help you out. For any information or if you have any question reach out me via email info@itilin.by or [telegram](https://t.me/itilin). Check my personal site [itilin.by](http://itilin.by) I have some articles in [blog](http://itilin.by/blog) section.
 
 It ain't much but the honest work
-
-## TODO:
-- add default value for killing question. Probably Y, because during usage I mostly answer yes...
