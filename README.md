@@ -8,7 +8,7 @@ Have you ever wanted to run some program on a certain port, but seen a message s
 - run check-port on your computer from everywhere.
 
 ## How it works?
-When you type `check-port` on your terminal it asks you 'Which port should I check?' and asks for your input to a port. Alternatively you can provide 'p' option with number of a port. Just like this `check-port -p 3000`. If nothing provided the program will continue to ask for the port number. Then it checks if the port provided is numeric value or not. The programm will bother user until one provides numeric value or force quits programm execution. Then the programm checks if the port is in use or not. If it's in use the programm will ask you if it should kill the process. In case if you press Y or y process would be killed and you can do whatever you want with the port. Here are some illustrations to help you out.
+When you type `check-port` on your terminal it asks you 'Which port should I check?' and asks for your input to a port. Alternatively you can provide 'p' option with number of a port. Just like this `check-port -p 3000`. If nothing provided the program will continue to ask for the port number. Then it checks if the port provided is numeric value or not. The programm will bother user until one provides numeric value or force quits programm execution. Then the programm checks if the port is in use or not. If it's in use the programm will ask you if it should kill the process. The default answer is Y, which means yes. In case if you press Y or y process would be killed and you can do whatever you want with the port. Here are some illustrations to help you out.
 
 Illustrations are bit out of date, but you've got the concept.
 1. ![which port to check](which-port-to-check.jpeg)
