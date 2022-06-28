@@ -1,5 +1,27 @@
 #!/bin/bash
-read -p 'Which port should I check? ' port
+while getopts p: flag
+do 
+    case "$flag" in
+        p) port=${OPTARG};;
+    esac
+done
+
+if [ -z "$port" ];
+then
+    read -p 'Which port should I check? ' port
+    while [ -z "$port" ]
+    do
+        echo "[WARNING] I won't be able to proceed without a port";
+        read -p "Which port should I check? " port
+    done
+fi
+
+while ! [[ "$port" =~ ^[0-9]+$ ]]
+do
+    echo "port should be integer";
+    read -p "Which port should I check? " port
+done
+
 echo Checking port $port...
 
 processId=`lsof -i tcp:$port | grep LISTEN | tr -s ' ' | cut -d ' ' -f 2`
