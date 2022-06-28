@@ -29,7 +29,8 @@ processId=`lsof -i tcp:$port | grep LISTEN | tr -s ' ' | cut -d ' ' -f 2`
 if [ ! -z "$processId" ];
 then
     echo PID is $processId
-    read -p "Do you want to kill this process? (yes/no) " yn
+    read -p "Do you want to kill this process? (yes/no) [Y] " yn
+    yn=${yn:-Y}
     case $yn in
         [yY] ) echo ok, killing process $processId
             kill -9 $processId
